@@ -3,7 +3,7 @@ For easy to transfer files into MCUs running MicroPython.
 
 # Usage
 Just change ssid and password in ftp.py and copy ftp.py into like Raspberry Pi Pico w,
-then run it, it will start a ftp server on your Micropython device.
+then run it, it will start a ftp server on your MicroPython device.
 
 output looks like this:
 

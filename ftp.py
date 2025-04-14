@@ -1,9 +1,11 @@
-import network
-import socket
+import os
 import uos
 import gc
 import sys
+import network
+import socket
 import errno
+from io import StringIO
 from time import sleep_ms, localtime
 from micropython import alloc_emergency_exception_buf
 
@@ -512,17 +514,17 @@ def restart(port=21, verbose=0, splash=True):
     stop()
     sleep_ms(200)
     start(port, verbose, splash)
-
+    
 
 if __name__ == "__main__":
-    # change your wifi ssid & password before run it
-    ssid = ""
-    password = ""
+    ssid = input("ssid: ")
+    password = input("password: ")
     WIFI.active(True)
     WIFI.connect(ssid, password)
     while not WIFI.is_connect():
         sleep_ms(500)
     print(WIFI.ifconfig())
-    start()
+    start()    
     while True:
         sleep_ms(1000)
+        
